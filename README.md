@@ -66,3 +66,16 @@ class.
 >>> g.latlng('155 9th St San Francisco, CA')
 {'lat': 37.775002, 'lng': -122.418297}
 ```
+
+
+Specify a Mapquest endpoint if desired. This allows the Open Data endpoint to be used instead of the licensed endpoint.
+
+
+```python
+>>> import mapq
+
+>>> mapq.endpoint('http://open.mapquestapi.com/geocoding/v1')
+
+```python
+>>> from mapq import Geo
+>>> g = Geo('my_api_key', 'http://open.mapquestapi.com/geocoding/v1')
