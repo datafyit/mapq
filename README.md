@@ -75,7 +75,12 @@ Specify a Mapquest endpoint if desired. This allows the Open Data endpoint to be
 >>> import mapq
 
 >>> mapq.endpoint('http://open.mapquestapi.com/geocoding/v1')
+```
+
+Can also be set when interacting with the `Geo` class.
 
 ```python
 >>> from mapq import Geo
 >>> g = Geo('my_api_key', 'http://open.mapquestapi.com/geocoding/v1')
+```
+
