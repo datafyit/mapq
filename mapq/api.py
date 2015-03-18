@@ -13,6 +13,14 @@ def key(api_key=None):
     return os.environ['MAPQUEST_API_KEY']
 
 
+def endpoint(endpoint=None):
+    """Set the endpoint as an environment variable."""
+    if endpoint:
+        os.environ['MAPQUEST_ENDPOINT'] = endpoint
+    return os.environ['MAPQUEST_ENDPOINT']
+
+
+
 def address(name, **kwargs):
     """Geocode an address."""
     return Geo().address(name, **kwargs)

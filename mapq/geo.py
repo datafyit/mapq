@@ -14,9 +14,9 @@ from simplejson import loads
 class Geo(object):
     """A simple Mapquest Geocoding API wrapper."""
 
-    def __init__(self, api_key=None):
+    def __init__(self, api_key=None, endpoint=None):
         self._set_key(api_key)
-        self.endpoint = "http://www.mapquestapi.com/geocoding/v1"
+        self._set_endpoint(endpoint)
 
     def _set_key(self, api_key):
         """Configure the instance's Mapquest API key."""
@@ -26,6 +26,15 @@ class Geo(object):
             else:
                 api_key = ''
         self.api_key = unquote(api_key)
+
+    def _set_endpoint(self, endpoint):
+        """Configure the instance's Mapquest endpoint."""
+        if not endpoint:
+            if 'MAPQUEST_ENDPOINT' in os.environ:
+                endpoint = os.environ['MAPQUEST_ENDPOINT']
+            else:
+                endpoint = 'http://www.mapquestapi.com/geocoding/v1'
+        self.endpoint = endpoint
 
     def get(self, path, **kwargs):
         """Perform a get request."""
