@@ -1,6 +1,7 @@
 """
 Simplified methods for calling Mapquest's Geocoding API.
 """
+from __future__ import unicode_literals
 
 import os
 from .geo import Geo

@@ -3,9 +3,13 @@ Geocode locations using the Mapquest Geocoding API.
 
 Documentation:  http://www.mapquestapi.com/geocoding/
 """
+from __future__ import unicode_literals
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 
 import os
-from urllib import unquote
+from urllib.parse import unquote
 
 import requests as req
 from simplejson import loads
