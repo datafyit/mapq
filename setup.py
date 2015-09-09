@@ -45,6 +45,7 @@ setup(
         'mapq'
     ],
     install_requires=[
+        'future',
         'requests',
         'simplejson',
     ],
